@@ -10,7 +10,7 @@
 /*   Font    */
 /*  Body   */
 .container {
-  padding: 16%;
+  padding: 5% 10%;
   font-family: "Space Mono", monospace;
   font-size: 1.5rem;
   font-weight: 700;
@@ -34,6 +34,11 @@
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+}
+
+.input-label {
+  font-size: 1rem;
+  color: #5e7a7d;
 }
 
 /*# sourceMappingURL=index.css.map */
