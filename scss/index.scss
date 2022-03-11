@@ -27,6 +27,33 @@ $font-size: 1.5rem;
 
 /*   Font    */
 
-$font: "Space Mono",
+$font-mono: "Space Mono",
 monospace;
 $font-700: 700;
+
+/*  Body   */
+
+.container {
+    padding: 16%;
+    font-family: $font-mono;
+    font-size: $font-size;
+    font-weight: $font-700;
+    background: $light-grayish-cyan;
+}
+
+.app {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    border-radius: 15px;
+    @media (min-width: 720px) {
+        flex-direction: row;
+    }
+}
+
+.calculations {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
