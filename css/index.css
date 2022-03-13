@@ -13,6 +13,7 @@
   font-family: "Space Mono", monospace;
   font-size: 1.5rem;
   font-weight: 700;
+  height: 100vh;
   background: #c5e4e7;
   display: flex;
   flex-direction: column;
@@ -117,17 +118,20 @@
 
 /* results */
 .results {
+  border-radius: 15px;
+  border-style: none;
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
   margin: 2rem 0 0;
   background-color: #00494d;
-  border-radius: 15px;
-  border-style: none;
 }
 
 .tip-amt {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin: 0.5rem 0;
 }
 .tip-amt h3 {
   font-size: 1rem;
@@ -143,6 +147,16 @@
 .tip-amt .dollar {
   font-size: 1.7rem;
   font-family: sans-serif;
+}
+
+.reset-btn {
+  margin: 1.5rem 0 0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border-style: none;
+  text-transform: uppercase;
+  background: #26c0ab;
+  opacity: 0.1;
 }
 
 /*# sourceMappingURL=index.css.map */

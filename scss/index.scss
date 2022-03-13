@@ -37,6 +37,7 @@ $font-700: 700;
     font-family: $font-mono;
     font-size: $font-size;
     font-weight: $font-700;
+    height: 100vh;
     background: $light-grayish-cyan;
     display: flex;
     flex-direction: column;
@@ -135,17 +136,20 @@ $font-700: 700;
 /* results */
 
 .results {
+    border-radius: 15px;
+    border-style: none;
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem;
     margin: 2rem 0 0;
     background-color: $very-dark-cyan;
-    border-radius: 15px;
-    border-style: none;
 }
 
 .tip-amt {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin: 0.5rem 0;
     h3 {
         font-size: 1rem;
         color: $very-light-grayish-cyan;
@@ -161,4 +165,14 @@ $font-700: 700;
         font-size: 1.7rem;
         font-family: sans-serif;
     }
+}
+
+.reset-btn {
+    margin: 1.5rem 0 0;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border-style: none;
+    text-transform: uppercase;
+    background: $strong-cyan;
+    opacity: 0.1;
 }
