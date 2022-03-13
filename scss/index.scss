@@ -146,24 +146,19 @@ $font-700: 700;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    position: relative;
-}
-
-.tip-amt h3 {
-    font-size: 1rem;
-    color: $very-light-grayish-cyan;
-}
-
-.tip-amt h3>span {
-    color: $grayish-cyan;
-}
-
-.tip-amt h2 {
-    margin: 0 0 0 6rem;
-    color: $strong-cyan;
-}
-
-.dollar {
-    font-size: 1.7rem;
-    font-family: sans-serif;
+    h3 {
+        font-size: 1rem;
+        color: $very-light-grayish-cyan;
+    }
+    h3>span {
+        color: $grayish-cyan;
+    }
+    h2 {
+        margin: 0 0 0 6rem;
+        color: $strong-cyan;
+    }
+    .dollar {
+        font-size: 1.7rem;
+        font-family: sans-serif;
+    }
 }

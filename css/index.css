@@ -128,24 +128,19 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
-
 .tip-amt h3 {
   font-size: 1rem;
   color: #f4fafa;
 }
-
 .tip-amt h3 > span {
   color: #7f9c9f;
 }
-
 .tip-amt h2 {
   margin: 0 0 0 6rem;
   color: #26c0ab;
 }
-
-.dollar {
+.tip-amt .dollar {
   font-size: 1.7rem;
   font-family: sans-serif;
 }
