@@ -30,6 +30,7 @@
   flex-direction: column;
   background: white;
   border-radius: 15px;
+  padding: 1.5rem;
 }
 @media (min-width: 992px) {
   .app {
@@ -40,7 +41,6 @@
 .calculations {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
 }
 
 .input-label {
@@ -55,8 +55,13 @@
   display: flex;
   border-radius: 5px;
   text-align: right;
-  background: #f4fafa url("../assets/images/icon-dollar.svg") no-repeat scroll 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
+  background-color: #f4fafa;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 1rem;
+  margin: 0 0 0.8rem;
+  background-image: url("../assets/images/icon-dollar.svg");
 }
 
 ::-webkit-input-placeholder {
@@ -73,9 +78,40 @@
 
 /* tip percentage */
 .tip-btns {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.btn {
+  background-color: #00494d;
+  color: #f4fafa;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.5rem 1rem;
+}
+
+.custom-btn {
+  background-color: #f4fafa;
+  color: #5e7a7d;
+  border: 5px;
+}
+
+.people {
+  border-style: none;
+  outline: none;
+  display: flex;
+  border-radius: 5px;
+  text-align: right;
+  padding: 0.5rem 0;
+  background-color: #f4fafa;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 1rem;
+  background-image: url("../assets/images/icon-person.svg");
 }
 
 /*# sourceMappingURL=index.css.map */

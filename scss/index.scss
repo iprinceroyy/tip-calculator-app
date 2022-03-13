@@ -52,6 +52,7 @@ $font-700: 700;
     flex-direction: column;
     background: $white;
     border-radius: 15px;
+    padding: 1.5rem;
     @media (min-width: 992px) {
         flex-direction: row;
     }
@@ -60,7 +61,6 @@ $font-700: 700;
 .calculations {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
 }
 
 .input-label {
@@ -69,14 +69,23 @@ $font-700: 700;
     display: block;
 }
 
-.amt-input {
+@mixin input-theme() {
     border-style: none;
     outline: none;
     display: flex;
     border-radius: 5px;
     text-align: right;
-    background: $very-light-grayish-cyan url("../assets/images/icon-dollar.svg") no-repeat scroll 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0; //for input box size
+    background-color: $very-light-grayish-cyan;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 1rem;
+}
+
+.amt-input {
+    @include input-theme;
+    margin: 0 0 0.8rem; //for next componennt
+    background-image: url("../assets/images/icon-dollar.svg");
 }
 
 ::-webkit-input-placeholder {
@@ -95,7 +104,29 @@ $font-700: 700;
 /* tip percentage */
 
 .tip-btns {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.btn {
+    background-color: $very-dark-cyan;
+    color: $very-light-grayish-cyan;
+    border-radius: 5px;
+    border-style: none;
+    padding: 0.5rem 1rem;
+}
+
+.custom-btn {
+    background-color: $very-light-grayish-cyan;
+    color: $dark-grayish-cyan;
+    border: 5px;
+}
+
+.people {
+    @include input-theme;
+    background-image: url("../assets/images/icon-person.svg");
 }
