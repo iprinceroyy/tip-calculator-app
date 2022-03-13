@@ -73,6 +73,7 @@ $font-700: 700;
     border-style: none;
     outline: none;
     display: flex;
+    width: 100%;
     border-radius: 5px;
     text-align: right;
     padding: 0.5rem 0; //for input box size
@@ -149,10 +150,6 @@ $font-700: 700;
     position: relative;
 }
 
-.tip-amt span {
-    display: block;
-}
-
 .tip-amt h3 {
     font-size: 1rem;
     color: $very-light-grayish-cyan;
@@ -163,11 +160,11 @@ $font-700: 700;
 }
 
 .tip-amt h2 {
-    margin: 0 0 0 4rem;
+    margin: 0 0 0 6rem;
     color: $strong-cyan;
 }
 
-h2 img {
-    display: inline;
-    width: 1rem;
+.dollar {
+    font-size: 1.7rem;
+    font-family: sans-serif;
 }
