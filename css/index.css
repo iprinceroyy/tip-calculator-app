@@ -13,7 +13,7 @@
   font-family: "Space Mono", monospace;
   font-size: 1.5rem;
   font-weight: 700;
-  height: 100vh;
+  min-height: 100vh;
   background: #c5e4e7;
   display: flex;
   flex-direction: column;
@@ -54,6 +54,7 @@
   outline: none;
   display: flex;
   width: 100%;
+  color: #00494d;
   border-radius: 5px;
   text-align: right;
   padding: 0.5rem 0;
@@ -63,6 +64,18 @@
   background-position: 1rem;
   margin: 0 0 0.8rem;
   background-image: url("../assets/images/icon-dollar.svg");
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 ::-webkit-input-placeholder {
@@ -106,6 +119,7 @@
   outline: none;
   display: flex;
   width: 100%;
+  color: #00494d;
   border-radius: 5px;
   text-align: right;
   padding: 0.5rem 0;
