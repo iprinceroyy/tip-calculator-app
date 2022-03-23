@@ -31,16 +31,3 @@ function getValues() {
 
     return arr;
 }
-
-
-
-
-/*
-for (let i = 0; i < tipsBtn.length; i++) {
-    tipsBtn[i].addEventListener('click', () => {
-        console.log(tipsBtn[i].value);
-    })
-}*/
-
-let array = getValues();
-console.log(array);
