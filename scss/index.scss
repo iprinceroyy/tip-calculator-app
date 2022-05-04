@@ -37,14 +37,22 @@ $font-700: 700;
     font-family: $font-mono;
     font-size: $font-size;
     font-weight: $font-700;
-    min-height: 100vh;
+    max-height: 100vh;
     background: $light-grayish-cyan;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 2rem;
+    //align-items: center;
     @media (min-width: 992px) {
-        padding: 10rem 22rem;
+        padding: 4rem 18rem;
     }
+}
+
+h1 {
+    color: $dark-grayish-cyan;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 1rem;
 }
 
 .app {
@@ -54,7 +62,10 @@ $font-700: 700;
     border-radius: 15px;
     padding: 1.5rem;
     @media (min-width: 992px) {
-        flex-direction: row;
+        display: -ms-grid;
+        display: grid;
+        grid-gap: 3rem;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -102,7 +113,7 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 
-input[type=number] {
+input[type="number"] {
     -moz-appearance: textfield;
 }
 
