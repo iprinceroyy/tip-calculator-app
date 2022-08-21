@@ -27,6 +27,7 @@ $font-size: 1.5rem;
 
 /*   Font    */
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 $font-mono: "Space Mono",
 monospace;
 $font-700: 700;
@@ -34,48 +35,50 @@ $font-700: 700;
 /*  Body   */
 
 .container {
+    min-height: 100vh;
     font-family: $font-mono;
     font-size: $font-size;
     font-weight: $font-700;
-    min-height: 100vh;
     background: $light-grayish-cyan;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    //align-items: center;
-    @media (min-width: 992px) {
-        padding: 4rem 18rem;
+    gap: 4rem;
+    @media(min-width: 45rem) {
+        padding: 4rem 9rem;
+    }
+    @media (min-width: 1280px) {
+        padding: 4rem 11rem;
     }
 }
 
 .sr--only {
-    font-size: 0;
-}
-
-h1 {
-    color: $dark-grayish-cyan;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 1rem;
+    display: none;
 }
 
 .calculator {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     background: $white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    @media (min-width: 992px) {
-        display: -ms-grid;
-        display: grid;
-        grid-gap: 3rem;
-        grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    padding: clamp(1.5rem, 0.857rem + 1.428vw, 2rem);
+    grid-gap: 2rem;
+    @media (min-width: 1024px) {
+        //grid-gap: 3rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+header {
+    align-self: center;
+    h1 {
+        font-size: 0;
     }
 }
 
 .calculator__inputs {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+    padding: clamp(0rem, -1.2825rem + 2.85vw, 1rem);
 }
 
 .inputs__bill--label {
@@ -92,7 +95,8 @@ h1 {
     color: $very-dark-cyan;
     border-radius: 5px;
     text-align: right;
-    padding: 0.5rem 0; //for input box size
+    margin-block: 0.5rem; // around input box
+    padding-block: 0.5rem; //for input box size
     background-color: $very-light-grayish-cyan;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -101,7 +105,6 @@ h1 {
 
 .inputs__bill--amt {
     @include input-theme;
-    margin: 0 0 0.8rem; //for next componennt
     background-image: url("../assets/images/icon-dollar.svg");
 }
 
@@ -128,10 +131,6 @@ input::-webkit-inner-spin-button {
     text-align: right;
 }
 
-.calculations div:nth-of-type(1) {
-    margin: 1rem 0;
-}
-
 
 /* tip percentage */
 
@@ -142,18 +141,19 @@ input::-webkit-inner-spin-button {
 }
 
 .tip__btns {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
-    margin: 1rem 0 1.5rem;
+    margin-block: 0.8rem;
+    @media(min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .btn {
     border-radius: 5px;
     border-style: none;
-    padding: 0.5rem 1rem;
+    padding-block: 0.3rem;
     &--primary {
         color: $very-light-grayish-cyan;
         background-color: $very-dark-cyan;
@@ -172,6 +172,7 @@ input::-webkit-inner-spin-button {
 
 .inputs__people--input {
     @include input-theme;
+    margin-block-end: 0;
     background-image: url("../assets/images/icon-person.svg");
 }
 
@@ -183,8 +184,8 @@ input::-webkit-inner-spin-button {
     border-style: none;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     padding: 1.5rem;
-    margin: 2rem 0 0;
     background-color: $very-dark-cyan;
 }
 
