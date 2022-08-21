@@ -26,46 +26,48 @@
 <body>
     <main class="container">
         <h1>splitter</h1>
-        <div class="app">
-            <div class="calculations">
-                <div>
-                    <label for="amount" class="input-label">Bill</label>
-                    <input type="number" id="bill" class="amt-input" placeholder="0" />
+        <article class="calculator">
+            <h2 class="sr--only">Tip calculator</h2>
+            <section class="inputs calculator__inputs">
+                <h3 class="sr--only">Inputs</h3>
+                <div class="inputs__bill">
+                    <label for="billAmt" class="inputs__bill--label">Bill</label>
+                    <input type="number" id="billAmt" class="inputs__bill--amt" placeholder="0" />
                 </div>
 
-
-                <label for="" class="input-label">Select Tip %</label>
-                <div class="tip-btns">
-                    <button type="button" value="5" class="btn">5%</button>
-                    <button type="button" value="10" class="btn">10%</button>
-                    <button type="button" value="15" class="btn">15%</button>
-                    <button type="button" value="25" class="btn">25%</button>
-                    <button type="button" value="50" class="btn">50%</button>
-                    <input type="button" value="Custom" class="btn custom-btn" />Custom
+                <div class="tip inputs__tip">
+                    <label for="" class="inputs__tip--label">Select Tip %</label>
+                    <div class="tip__btns">
+                        <button type="button" class="btn btn--primary">50%</button>
+                        <button type="button" class="btn btn--primary">5%</button>
+                        <button type="button" class="btn btn--primary">10%</button>
+                        <button type="button" class="btn btn--primary">15%</button>
+                        <button type="button" class="btn btn--primary">25%</button>
+                        <input type="button" class="btn btn--secondary" value="Custom" aria-label="custom tip" />
+                    </div>
                 </div>
 
-                <div>
-                    <label for="no-of-people" class="input-label">People</label>
-                    <input type="number" id="no-of-people" class="people" placeholder="0" />
+                <div class="inputs__people">
+                    <label for="no-of-people" class="inputs__people--label">People</label>
+                    <input type="number" id="no-of-people" class="inputs__people--input" placeholder="0" />
                 </div>
-            </div>
+            </section>
 
-            <div class="results">
-                <div class="tip-amt">
-                    <h3>Tip Amount<span><br />/ person</span></h3>
-                    <h2><span class="dollar">$</span>0.00</h2>
-                </div>
-
-                <div class="tip-amt">
-                    <h3>Total<span><br />/ person</span></h3>
-                    <h2><span class="dollar">&dollar;</span>0.00</h2>
+            <section class="result calculator__result">
+                <h3 class="sr--only">Results</h3>
+                <div class="result__tip--amt">
+                    <h4>Tip Amount <br>/ person</h4>
+                    <p class="result--amt">$0.00</p>
                 </div>
 
-                <button type="reset" id="resetButton" class="reset-btn" aria-label="reset">
-                    Reset
-                </button>
-            </div>
-        </div>
+                <div class="result__tip--amt">
+                    <h4>Total <br>/ person</h4>
+                    <p class="result--total">$0.00</p>
+                </div>
+
+                <button type="reset" class="reset-btn">Reset</button>
+            </section>
+        </article>
     </main>
 
     <!--Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount / person Total / person Reset -->
