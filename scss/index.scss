@@ -46,9 +46,6 @@ $font-700: 700;
     @media(min-width: 45rem) {
         padding: 4rem 9rem;
     }
-    @media (min-width: 1280px) {
-        padding: 4rem 11rem;
-    }
 }
 
 .sr--only {
@@ -57,13 +54,14 @@ $font-700: 700;
 
 .calculator {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
     background: $white;
     border-radius: 20px;
     padding: clamp(1.5rem, 0.857rem + 1.428vw, 2rem);
-    grid-gap: 2rem;
-    @media (min-width: 1024px) {
-        //grid-gap: 3rem;
-        grid-template-columns: repeat(2, 1fr);
+    @media(min-width: 1280px) {
+        align-self: center;
+        width: calc(100vw + -50%);
     }
 }
 
@@ -120,9 +118,6 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 
-// input[type="number"] {
-//     -moz-appearance: textfield;
-// }
 ::-webkit-input-placeholder {
     text-align: right;
 }
@@ -146,7 +141,7 @@ input::-webkit-inner-spin-button {
     gap: 0.8rem;
     margin-block: 0.8rem;
     @media(min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(25%, 1fr));
     }
 }
 
@@ -159,6 +154,7 @@ input::-webkit-inner-spin-button {
         background-color: $very-dark-cyan;
     }
     &--secondary {
+        text-align: center;
         color: $dark-grayish-cyan;
         background-color: $very-light-grayish-cyan;
     }
@@ -192,6 +188,7 @@ input::-webkit-inner-spin-button {
 .result__tip--amt {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     h4 {
         font-size: 0.9rem;
         color: rgba($very-light-grayish-cyan, 0.3);
@@ -202,9 +199,11 @@ input::-webkit-inner-spin-button {
     }
     .result--amt {
         color: $strong-cyan;
+        font-size: 3rem;
     }
     .result--total {
         color: $strong-cyan;
+        font-size: 3rem;
     }
 }
 
@@ -216,4 +215,5 @@ input::-webkit-inner-spin-button {
     text-transform: uppercase;
     background: $strong-cyan;
     opacity: 0.1;
+    justify-self: flex-end;
 }

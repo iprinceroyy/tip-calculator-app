@@ -25,11 +25,6 @@
     padding: 4rem 9rem;
   }
 }
-@media (min-width: 1280px) {
-  .container {
-    padding: 4rem 11rem;
-  }
-}
 
 .sr--only {
   display: none;
@@ -37,14 +32,16 @@
 
 .calculator {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
   background: white;
   border-radius: 20px;
   padding: clamp(1.5rem, 0.857rem + 1.428vw, 2rem);
-  grid-gap: 2rem;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .calculator {
-    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+    width: calc(100vw - 50%);
   }
 }
 
@@ -116,7 +113,7 @@ input::-webkit-inner-spin-button {
 }
 @media (min-width: 1024px) {
   .tip__btns {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(25%, 1fr));
   }
 }
 
@@ -130,6 +127,7 @@ input::-webkit-inner-spin-button {
   background-color: #00494d;
 }
 .btn--secondary {
+  text-align: center;
   color: #5e7a7d;
   background-color: #f4fafa;
 }
@@ -172,6 +170,7 @@ input::-webkit-inner-spin-button {
 .result__tip--amt {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .result__tip--amt h4 {
   font-size: 0.9rem;
@@ -183,9 +182,11 @@ input::-webkit-inner-spin-button {
 }
 .result__tip--amt .result--amt {
   color: #26c0ab;
+  font-size: 3rem;
 }
 .result__tip--amt .result--total {
   color: #26c0ab;
+  font-size: 3rem;
 }
 
 .reset-btn {
@@ -196,6 +197,7 @@ input::-webkit-inner-spin-button {
   text-transform: uppercase;
   background: #26c0ab;
   opacity: 0.1;
+  justify-self: flex-end;
 }
 
 /*# sourceMappingURL=index.css.map */
