@@ -37,7 +37,7 @@ $font-700: 700;
     font-family: $font-mono;
     font-size: $font-size;
     font-weight: $font-700;
-    max-height: 100vh;
+    min-height: 100vh;
     background: $light-grayish-cyan;
     display: flex;
     flex-direction: column;
@@ -48,6 +48,10 @@ $font-700: 700;
     }
 }
 
+.sr--only {
+    font-size: 0;
+}
+
 h1 {
     color: $dark-grayish-cyan;
     text-align: center;
@@ -55,7 +59,7 @@ h1 {
     margin: 1rem;
 }
 
-.app {
+.calculator {
     display: flex;
     flex-direction: column;
     background: $white;
@@ -69,12 +73,12 @@ h1 {
     }
 }
 
-.calculations {
+.calculator__inputs {
     display: flex;
     flex-direction: column;
 }
 
-.input-label {
+.inputs__bill--label {
     font-size: 1rem;
     color: $dark-grayish-cyan;
     display: block;
@@ -95,7 +99,7 @@ h1 {
     background-position: 1rem;
 }
 
-.amt-input {
+.inputs__bill--amt {
     @include input-theme;
     margin: 0 0 0.8rem; //for next componennt
     background-image: url("../assets/images/icon-dollar.svg");
@@ -113,10 +117,9 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
+// input[type="number"] {
+//     -moz-appearance: textfield;
+// }
 ::-webkit-input-placeholder {
     text-align: right;
 }
@@ -132,7 +135,13 @@ input[type="number"] {
 
 /* tip percentage */
 
-.tip-btns {
+.inputs__tip--label {
+    font-size: 1rem;
+    color: $dark-grayish-cyan;
+    display: block;
+}
+
+.tip__btns {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -142,19 +151,26 @@ input[type="number"] {
 }
 
 .btn {
-    background-color: $very-dark-cyan;
-    color: $very-light-grayish-cyan;
     border-radius: 5px;
     border-style: none;
     padding: 0.5rem 1rem;
+    &--primary {
+        color: $very-light-grayish-cyan;
+        background-color: $very-dark-cyan;
+    }
+    &--secondary {
+        color: $dark-grayish-cyan;
+        background-color: $very-light-grayish-cyan;
+    }
 }
 
-.custom-btn {
-    background-color: $very-light-grayish-cyan;
+.inputs__people--label {
+    font-size: 1rem;
     color: $dark-grayish-cyan;
+    display: block;
 }
 
-.people {
+.inputs__people--input {
     @include input-theme;
     background-image: url("../assets/images/icon-person.svg");
 }
@@ -162,7 +178,7 @@ input[type="number"] {
 
 /* results */
 
-.results {
+.result {
     border-radius: 15px;
     border-style: none;
     display: flex;
@@ -172,24 +188,22 @@ input[type="number"] {
     background-color: $very-dark-cyan;
 }
 
-.tip-amt {
+.result__tip--amt {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin: 0.5rem 0;
-    h3 {
-        font-size: 1rem;
-        color: $very-light-grayish-cyan;
+    h4 {
+        font-size: 0.9rem;
+        color: rgba($very-light-grayish-cyan, 0.3);
+        &::first-line {
+            color: $very-light-grayish-cyan;
+            font-size: 1rem;
+        }
     }
-    h3>span {
-        color: $grayish-cyan;
-    }
-    h2 {
-        margin: 0 0 0 6rem;
+    .result--amt {
         color: $strong-cyan;
     }
-    .dollar {
-        font-size: 2rem;
+    .result--total {
+        color: $strong-cyan;
     }
 }
 
