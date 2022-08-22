@@ -101,7 +101,33 @@ header {
     background-position: 1rem;
     &:focus {
         cursor: pointer;
-        outline: 3px solid $strong-cyan;
+        outline-width: 3px;
+        outline-style: solid;
+        outline-color: $strong-cyan;
+    }
+}
+
+.error {
+    animation-name: shake;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2;
+    animation-fill-mode: backwards;
+    outline-color: hsl(0, 95%, 66%);
+}
+
+@keyframes shake {
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: 0.5rem;
+    }
+    75% {
+        margin-left: -0.5rem;
+    }
+    100% {
+        margin-left: 0;
     }
 }
 
@@ -191,29 +217,6 @@ input::-webkit-inner-spin-button {
     @include input-theme;
     margin-block-end: 0;
     background-image: url("../assets/images/icon-person.svg");
-}
-
-.error {
-    outline: 3px solid hsl(0, 95%, 66%);
-    animation-name: shake;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 2;
-}
-
-@keyframes shake {
-    0% {
-        margin-left: 0;
-    }
-    25% {
-        margin-left: 0.5rem;
-    }
-    75% {
-        margin-left: -0.5rem;
-    }
-    100% {
-        margin-left: 0;
-    }
 }
 
 
