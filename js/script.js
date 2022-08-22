@@ -40,7 +40,7 @@ const calcTip = () => {
     resetBtn.style.opacity = 1;
 };
 
-let [billVal, tipVal, people] = [];
+let [billVal, tipVal, people] = [-1, -1, -1];
 
 const customTipVal = function() {
     customBtn.addEventListener('input', function() {
