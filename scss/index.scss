@@ -30,7 +30,7 @@ $font-size: 1.5rem;
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 $font-mono: "Space Mono",
 monospace;
-$font-700: 700;
+$fw-700: 700;
 
 /*  Body   */
 
@@ -38,7 +38,7 @@ $font-700: 700;
     min-height: 100vh;
     font-family: $font-mono;
     font-size: $font-size;
-    font-weight: $font-700;
+    font-weight: $fw-700;
     background: $light-grayish-cyan;
     display: flex;
     flex-direction: column;
@@ -87,7 +87,6 @@ header {
 
 @mixin input-theme() {
     border-style: none;
-    outline: none;
     display: flex;
     width: 100%;
     color: $very-dark-cyan;
@@ -99,6 +98,9 @@ header {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: 1rem;
+    &:focus {
+        outline: 3px solid $strong-cyan;
+    }
 }
 
 .inputs__bill--amt {
@@ -120,10 +122,12 @@ input::-webkit-inner-spin-button {
 
 ::-webkit-input-placeholder {
     text-align: right;
+    color: rgba($very-dark-cyan, 0.9);
 }
 
 ::-moz-placeholder {
     text-align: right;
+    color: rgba($very-dark-cyan, 0.7);
 }
 
 
@@ -152,11 +156,18 @@ input::-webkit-inner-spin-button {
     &--primary {
         color: $very-light-grayish-cyan;
         background-color: $very-dark-cyan;
+        &:hover,
+        &:active {
+            cursor: pointer;
+            background-color: $strong-cyan;
+        }
     }
     &--secondary {
         text-align: center;
-        color: $dark-grayish-cyan;
-        background-color: $very-light-grayish-cyan;
+        &:focus {
+            outline: 3px solid $strong-cyan;
+            cursor: pointer;
+        }
     }
 }
 
@@ -173,7 +184,7 @@ input::-webkit-inner-spin-button {
 }
 
 .error {
-    outline: 2px solid blue;
+    outline: 3px solid hsl(0, 95%, 66%);
     animation-name: shake;
     animation-duration: 0.2s;
     animation-timing-function: ease-in-out;

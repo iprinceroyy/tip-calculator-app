@@ -67,7 +67,6 @@ header h1 {
 
 .inputs__bill--amt {
   border-style: none;
-  outline: none;
   display: flex;
   width: 100%;
   color: #00494d;
@@ -81,6 +80,9 @@ header h1 {
   background-position: 1rem;
   background-image: url("../assets/images/icon-dollar.svg");
 }
+.inputs__bill--amt:focus {
+  outline: 3px solid #26c0ab;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -92,10 +94,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 ::-webkit-input-placeholder {
   text-align: right;
+  color: rgba(0, 73, 77, 0.9);
 }
 
 ::-moz-placeholder {
   text-align: right;
+  color: rgba(0, 73, 77, 0.7);
 }
 
 /* tip percentage */
@@ -126,10 +130,16 @@ input::-webkit-inner-spin-button {
   color: #f4fafa;
   background-color: #00494d;
 }
+.btn--primary:hover, .btn--primary:active {
+  cursor: pointer;
+  background-color: #26c0ab;
+}
 .btn--secondary {
   text-align: center;
-  color: #5e7a7d;
-  background-color: #f4fafa;
+}
+.btn--secondary:focus {
+  outline: 3px solid #26c0ab;
+  cursor: pointer;
 }
 
 .inputs__people--label {
@@ -140,7 +150,6 @@ input::-webkit-inner-spin-button {
 
 .inputs__people--input {
   border-style: none;
-  outline: none;
   display: flex;
   width: 100%;
   color: #00494d;
@@ -155,9 +164,12 @@ input::-webkit-inner-spin-button {
   margin-block-end: 0;
   background-image: url("../assets/images/icon-person.svg");
 }
+.inputs__people--input:focus {
+  outline: 3px solid #26c0ab;
+}
 
 .error {
-  outline: 2px solid blue;
+  outline: 3px solid #fb5656;
   animation-name: shake;
   animation-duration: 0.2s;
   animation-timing-function: ease-in-out;
