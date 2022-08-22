@@ -10,11 +10,14 @@ const total = document.querySelector('.result--total');
 const customBtn = document.querySelector('.btn--secondary');
 const resetBtn = document.querySelector('.result__reset');
 
+let [billVal, tipVal, people] = [-1, -1, -1];
+
 const reset = () => {
     billInput.value = peopleInput.value = customBtn.value = '';
     tipAmount.textContent = '$0.00';
     total.textContent = '$0.00';
     resetBtn.disabled = !resetBtn.disabled;
+    resetBtn.style.opacity = 0.4;
 };
 
 resetBtn.addEventListener('click', reset.bind(this));
@@ -22,25 +25,29 @@ resetBtn.addEventListener('click', reset.bind(this));
 const checkInputs = (...args) => args.every(arg => arg > 0 && isFinite(arg));
 
 const calcTip = () => {
-    if (checkInputs(billVal, tipVal, people)) {
-        const res = ((tipVal / 100) * billVal) / people;
-        const totalVal = billVal / people + res;
+    const res = ((tipVal / 100) * billVal) / people;
+    const totalVal = billVal / people + res;
 
-        tipAmount.textContent = +res.toFixed(2);
-        total.textContent = +totalVal.toFixed(2);
-    } else if (billVal === 0 || people === 0) {
-        billVal === 0 && billInput.classList.toggle('error');
-        people === 0 && peopleInput.classList.toggle('error');
+    tipAmount.textContent = +res.toFixed(2);
+    total.textContent = +totalVal.toFixed(2);
+};
 
-        tipAmount.textContent = '$0.00';
-        total.textContent = '$0.00';
-    }
+const showError = element => {
+    element.classList.toggle('error');
+
+    tipAmount.textContent = '$0.00';
+    total.textContent = '$0.00';
+};
+
+const displayResult = () => {
+    checkInputs(billVal, tipVal, people) && calcTip();
+
+    billVal === 0 && showError(billInput);
+    people === 0 && showError(peopleInput);
 
     resetBtn.disabled = false;
     resetBtn.style.opacity = 1;
 };
-
-let [billVal, tipVal, people] = [-1, -1, -1];
 
 const customTipVal = function() {
     customBtn.addEventListener('input', function() {
@@ -52,20 +59,14 @@ const customTipVal = function() {
 tipBtn.addEventListener('click', function(e) {
     if (!e.target.classList.contains('btn')) return;
 
-    if (e.target.classList.contains('btn--secondary')) customTipVal();
-    else tipVal = +e.target.value.replaceAll('%', '');
-    console.log(`tip ${tipVal}`);
+    e.target.classList.contains('btn--secondary') ?
+        customTipVal() :
+        (tipVal = +e.target.value.replaceAll('%', ''));
 });
 
-billInput.addEventListener('input', function() {
-    billVal = +billInput.value;
-    billVal && tipVal && people && console.log(billVal, tipVal, people);
+calculator.addEventListener('input', function() {
+    billInput.value && (billVal = +billInput.value);
+    peopleInput.value && (people = +peopleInput.value);
 
-    calcTip();
-});
-
-peopleInput.addEventListener('input', function() {
-    people = +this.value;
-
-    calcTip();
+    displayResult();
 });
