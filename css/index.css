@@ -156,6 +156,28 @@ input::-webkit-inner-spin-button {
   background-image: url("../assets/images/icon-person.svg");
 }
 
+.error {
+  outline: 2px solid blue;
+  animation-name: shake;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 0.5rem;
+  }
+  75% {
+    margin-left: -0.5rem;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
 /* results */
 .result {
   border-radius: 15px;
@@ -189,14 +211,14 @@ input::-webkit-inner-spin-button {
   font-size: 3rem;
 }
 
-.reset-btn {
+.result__reset {
   margin: 1.5rem 0 0;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   border-style: none;
   text-transform: uppercase;
   background: #26c0ab;
-  opacity: 0.1;
+  opacity: 0.4;
   justify-self: flex-end;
 }
 
