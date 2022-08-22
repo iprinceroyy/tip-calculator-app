@@ -93,12 +93,14 @@ header {
     border-radius: 5px;
     text-align: right;
     margin-block: 0.5rem; // around input box
-    padding-block: 0.5rem; //for input box size
+    padding-block: 0.5rem;
+    padding-inline-end: 1rem;
     background-color: $very-light-grayish-cyan;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: 1rem;
     &:focus {
+        cursor: pointer;
         outline: 3px solid $strong-cyan;
     }
 }
@@ -122,12 +124,12 @@ input::-webkit-inner-spin-button {
 
 ::-webkit-input-placeholder {
     text-align: right;
-    color: rgba($very-dark-cyan, 0.9);
+    color: rgba($very-dark-cyan, 0.3);
 }
 
 ::-moz-placeholder {
     text-align: right;
-    color: rgba($very-dark-cyan, 0.7);
+    color: rgba($very-dark-cyan, 0.3);
 }
 
 
@@ -141,7 +143,7 @@ input::-webkit-inner-spin-button {
 
 .tip__btns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(50%, 1fr));
     gap: 0.8rem;
     margin-block: 0.8rem;
     @media(min-width: 1024px) {
@@ -159,14 +161,22 @@ input::-webkit-inner-spin-button {
         &:hover,
         &:active {
             cursor: pointer;
+            color: $very-dark-cyan;
             background-color: $strong-cyan;
         }
     }
     &--secondary {
+        color: $very-dark-cyan;
+        background-color: $very-light-grayish-cyan;
+        padding-inline-end: 1rem;
         text-align: center;
+        &::-webkit-input-placeholder {
+            text-align: center;
+            color: $very-dark-cyan;
+        }
         &:focus {
             outline: 3px solid $strong-cyan;
-            cursor: pointer;
+            text-align: right;
         }
     }
 }
@@ -246,8 +256,13 @@ input::-webkit-inner-spin-button {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     border-style: none;
+    color: $very-dark-cyan;
     text-transform: uppercase;
-    background: $strong-cyan;
+    background-color: $strong-cyan;
     opacity: 0.4;
-    justify-self: flex-end;
+    &:hover,
+    &:active {
+        cursor: pointer;
+        filter: grayscale(0.7) contrast(1) brightness(1.5);
+    }
 }

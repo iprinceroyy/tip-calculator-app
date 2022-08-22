@@ -74,6 +74,7 @@ header h1 {
   text-align: right;
   margin-block: 0.5rem;
   padding-block: 0.5rem;
+  padding-inline-end: 1rem;
   background-color: #f4fafa;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -81,6 +82,7 @@ header h1 {
   background-image: url("../assets/images/icon-dollar.svg");
 }
 .inputs__bill--amt:focus {
+  cursor: pointer;
   outline: 3px solid #26c0ab;
 }
 
@@ -94,12 +96,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 ::-webkit-input-placeholder {
   text-align: right;
-  color: rgba(0, 73, 77, 0.9);
+  color: rgba(0, 73, 77, 0.3);
 }
 
 ::-moz-placeholder {
   text-align: right;
-  color: rgba(0, 73, 77, 0.7);
+  color: rgba(0, 73, 77, 0.3);
 }
 
 /* tip percentage */
@@ -111,7 +113,7 @@ input::-webkit-inner-spin-button {
 
 .tip__btns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(50%, 1fr));
   gap: 0.8rem;
   margin-block: 0.8rem;
 }
@@ -132,14 +134,22 @@ input::-webkit-inner-spin-button {
 }
 .btn--primary:hover, .btn--primary:active {
   cursor: pointer;
+  color: #00494d;
   background-color: #26c0ab;
 }
 .btn--secondary {
+  color: #00494d;
+  background-color: #f4fafa;
+  padding-inline-end: 1rem;
   text-align: center;
+}
+.btn--secondary::-webkit-input-placeholder {
+  text-align: center;
+  color: #00494d;
 }
 .btn--secondary:focus {
   outline: 3px solid #26c0ab;
-  cursor: pointer;
+  text-align: right;
 }
 
 .inputs__people--label {
@@ -157,6 +167,7 @@ input::-webkit-inner-spin-button {
   text-align: right;
   margin-block: 0.5rem;
   padding-block: 0.5rem;
+  padding-inline-end: 1rem;
   background-color: #f4fafa;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -165,6 +176,7 @@ input::-webkit-inner-spin-button {
   background-image: url("../assets/images/icon-person.svg");
 }
 .inputs__people--input:focus {
+  cursor: pointer;
   outline: 3px solid #26c0ab;
 }
 
@@ -228,10 +240,14 @@ input::-webkit-inner-spin-button {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   border-style: none;
+  color: #00494d;
   text-transform: uppercase;
-  background: #26c0ab;
+  background-color: #26c0ab;
   opacity: 0.4;
-  justify-self: flex-end;
+}
+.result__reset:hover, .result__reset:active {
+  cursor: pointer;
+  filter: grayscale(0.7) contrast(1) brightness(1.5);
 }
 
 /*# sourceMappingURL=index.css.map */
