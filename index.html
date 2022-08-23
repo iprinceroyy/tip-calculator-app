@@ -13,6 +13,7 @@
 
     <!-- CSS Main file  -->
     <link rel="stylesheet" href="css/index.css" />
+    <!-- <link rel="stylesheet" href="css/index.main.css" /> -->
 
     <!-- JS Main file -->
     <script defer src="js/script.js"></script>
@@ -27,9 +28,10 @@
     </header>
     <main class="calculator">
         <section class="inputs calculator__inputs">
-            <h3 class="sr--only">Inputs</h3>
+            <h2 class="sr--only">Inputs</h2>
             <div class="inputs__bill">
                 <label for="billAmt" class="inputs__bill--label">Bill</label>
+                <span class="error--text">Can't be zero</span>
                 <input type="number" id="billAmt" class="inputs__bill--amt" placeholder="0" />
             </div>
 
@@ -47,19 +49,20 @@
 
             <div class="inputs__people">
                 <label for="people" class="inputs__people--label">Number of People</label>
+                <span class="error--text">Can't be zero</span>
                 <input type="number" id="people" class="inputs__people--input" placeholder="0" />
             </div>
         </section>
 
         <section class="result calculator__result">
-            <h3 class="sr--only">Results</h3>
+            <h2 class="sr--only">Results</h2>
             <div class="result__tip--amt">
-                <h4>Tip Amount <br>/ person</h4>
+                <h3>Tip Amount <br>/ person</h3>
                 <p class="result--amt">$0.00</p>
             </div>
 
             <div class="result__tip--amt">
-                <h4>Total <br>/ person</h4>
+                <h3>Total <br>/ person</h3>
                 <p class="result--total">$0.00</p>
             </div>
 
@@ -67,7 +70,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="footer__links">
         <div class="attribution ">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge " target="_blank ">Frontend Mentor</a>. Coded by <a href="# ">Your Name Here</a>.
         </div>
