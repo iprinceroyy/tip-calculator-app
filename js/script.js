@@ -1,6 +1,5 @@
 'use strict';
 
-console.log('Started.....');
 const billInput = document.querySelector('#billAmt');
 const tipBtn = document.querySelector('.inputs__tip');
 const peopleInput = document.querySelector('#people');
@@ -14,13 +13,13 @@ let [billVal, tipVal, people] = [-1, -1, -1];
 
 const reset = () => {
     billInput.value = peopleInput.value = customBtn.value = '';
+
     tipAmount.textContent = '$0.00';
     total.textContent = '$0.00';
+
     resetBtn.disabled = !resetBtn.disabled;
     resetBtn.style.opacity = 0.4;
 };
-
-resetBtn.addEventListener('click', reset.bind(this));
 
 const checkInputs = (...args) => args.every(arg => arg > 0 && isFinite(arg));
 
@@ -28,23 +27,31 @@ const calcTip = () => {
     const res = ((tipVal / 100) * billVal) / people;
     const totalVal = billVal / people + res;
 
+    // Change tipAmt & total elements
+    // to the above result
     tipAmount.textContent = +res.toFixed(2);
     total.textContent = +totalVal.toFixed(2);
 };
 
 const showError = element => {
-    element.classList.toggle('error');
+    // If error, shake input elements
+    // and keep tipAmt, total to default
+    element.classList.toggle('error-animation');
+    element.previousElementSibling.classList.toggle('show-error');
 
     tipAmount.textContent = '$0.00';
     total.textContent = '$0.00';
 };
 
 const displayResult = () => {
+    // If inputs are valid, then calc tip
     checkInputs(billVal, tipVal, people) && calcTip();
 
+    // Else check error inputs
     billVal === 0 && showError(billInput);
     people === 0 && showError(peopleInput);
 
+    // Make reset btn enabled
     resetBtn.disabled = false;
     resetBtn.style.opacity = 1;
 };
@@ -56,6 +63,16 @@ const customTipVal = function() {
     return tipVal;
 };
 
+// Execution starts here when input element is triggered
+calculator.addEventListener('input', function() {
+    billInput.value && (billVal = +billInput.value);
+    peopleInput.value && (people = +peopleInput.value);
+
+    // Invoke this func every time input is changed
+    displayResult();
+});
+
+// For tip btn to get tip val
 tipBtn.addEventListener('click', function(e) {
     if (!e.target.classList.contains('btn')) return;
 
@@ -64,9 +81,5 @@ tipBtn.addEventListener('click', function(e) {
         (tipVal = +e.target.value.replaceAll('%', ''));
 });
 
-calculator.addEventListener('input', function() {
-    billInput.value && (billVal = +billInput.value);
-    peopleInput.value && (people = +peopleInput.value);
-
-    displayResult();
-});
+// Event handler to reset
+resetBtn.addEventListener('click', reset.bind(this));
