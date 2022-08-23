@@ -42,9 +42,11 @@ $fw-700: 700;
     background: $light-grayish-cyan;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem;
+    align-items: center;
+    margin-block-start: 3rem;
     @media(min-width: 45rem) {
-        padding: 4rem 9rem;
+        padding: 4rem;
     }
 }
 
@@ -54,22 +56,18 @@ $fw-700: 700;
 
 .calculator {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 2rem;
     background: $white;
     border-radius: 20px;
     padding: clamp(1.5rem, 0.857rem + 1.428vw, 2rem);
     @media(min-width: 1280px) {
-        align-self: center;
-        width: calc(100vw + -50%);
+        width: calc(100vw + -44%);
     }
 }
 
-header {
-    align-self: center;
-    h1 {
-        font-size: 0;
-    }
+h1 {
+    font-size: 0;
 }
 
 .calculator__inputs {
@@ -77,63 +75,6 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     padding: clamp(0rem, -1.2825rem + 2.85vw, 1rem);
-}
-
-.inputs__bill--label {
-    font-size: 1rem;
-    color: $dark-grayish-cyan;
-    display: block;
-}
-
-@mixin input-theme() {
-    border-style: none;
-    display: flex;
-    width: 100%;
-    color: $very-dark-cyan;
-    border-radius: 5px;
-    text-align: right;
-    margin-block: 0.5rem; // around input box
-    padding-block: 0.5rem;
-    padding-inline-end: 1rem;
-    background-color: $very-light-grayish-cyan;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: 1rem;
-    &:focus {
-        cursor: pointer;
-        outline-width: 3px;
-        outline-style: solid;
-        outline-color: $strong-cyan;
-    }
-}
-
-.error {
-    animation-name: shake;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 2;
-    animation-fill-mode: backwards;
-    outline-color: hsl(0, 95%, 66%);
-}
-
-@keyframes shake {
-    0% {
-        margin-left: 0;
-    }
-    25% {
-        margin-left: 0.5rem;
-    }
-    75% {
-        margin-left: -0.5rem;
-    }
-    100% {
-        margin-left: 0;
-    }
-}
-
-.inputs__bill--amt {
-    @include input-theme;
-    background-image: url("../assets/images/icon-dollar.svg");
 }
 
 
@@ -158,13 +99,75 @@ input::-webkit-inner-spin-button {
     color: rgba($very-dark-cyan, 0.3);
 }
 
+@mixin label-theme() {
+    font-size: 1rem;
+    color: $dark-grayish-cyan;
+    display: block;
+}
+
+@mixin input-theme() {
+    border-style: none;
+    display: flex;
+    width: 100%;
+    color: $very-dark-cyan;
+    border-radius: 5px;
+    text-align: right;
+    margin-block: 0.5rem; // around input box
+    padding-block: 0.5rem;
+    padding-inline-end: 1rem;
+    background-color: $very-light-grayish-cyan;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 1rem;
+    &:focus-visible {
+        cursor: pointer;
+        outline: 3px solid $strong-cyan;
+    }
+}
+
+.inputs__bill {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    &--label {
+        @include label-theme();
+    }
+    &--amt {
+        @include input-theme;
+        background-image: url("../assets/images/icon-dollar.svg");
+    }
+}
+
+.error-animation {
+    animation-name: shake;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2;
+    animation-fill-mode: backwards;
+    outline-width: 3px solid hsl(0, 95%, 66%);
+}
+
+@keyframes shake {
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: 0.5rem;
+    }
+    75% {
+        margin-left: -0.5rem;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
 
 /* tip percentage */
 
 .inputs__tip--label {
-    font-size: 1rem;
-    color: $dark-grayish-cyan;
-    display: block;
+    @include label-theme;
 }
 
 .tip__btns {
@@ -207,16 +210,25 @@ input::-webkit-inner-spin-button {
     }
 }
 
-.inputs__people--label {
-    font-size: 1rem;
-    color: $dark-grayish-cyan;
-    display: block;
+.inputs__people {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    &--label {
+        @include label-theme;
+    }
+    &--input {
+        @include input-theme;
+        margin-block-end: 0;
+        background-image: url("../assets/images/icon-person.svg");
+    }
 }
 
-.inputs__people--input {
-    @include input-theme;
-    margin-block-end: 0;
-    background-image: url("../assets/images/icon-person.svg");
+.error--text {
+    display: none;
+    font-size: 0.9rem;
+    color: hsl(0, 95%, 66%);
 }
 
 
@@ -236,7 +248,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h4 {
+    h3 {
         font-size: 0.9rem;
         color: rgba($very-light-grayish-cyan, 0.3);
         &::first-line {
@@ -246,11 +258,11 @@ input::-webkit-inner-spin-button {
     }
     .result--amt {
         color: $strong-cyan;
-        font-size: 3rem;
+        font-size: clamp(2rem, -0.367rem + 5.26vw, 3rem);
     }
     .result--total {
         color: $strong-cyan;
-        font-size: 3rem;
+        font-size: clamp(2rem, -0.367rem + 5.26vw, 3rem);
     }
 }
 
@@ -268,4 +280,13 @@ input::-webkit-inner-spin-button {
         cursor: pointer;
         filter: grayscale(0.7) contrast(1) brightness(1.5);
     }
+}
+
+.show-error {
+    display: inline-block;
+}
+
+.footer__links {
+    font-size: 1rem;
+    margin-block-start: 5rem;
 }
