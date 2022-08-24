@@ -43,7 +43,7 @@
 }
 @media (min-width: 1024px) {
   .calculator {
-    width: max(67%, 900px);
+    width: max(66.5%, 900px);
   }
 }
 
