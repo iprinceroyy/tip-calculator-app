@@ -28,10 +28,10 @@ const calcTip = () => {
     const totalVal = billVal / people + res;
 
     const resDigits = Math.floor(Math.log(res) / Math.log(10));
-    const totalDigits = Math.floor(Math.log(totalVal) / Math.log(10));
+    const totalValDigits = Math.floor(Math.log(totalVal) / Math.log(10));
 
     // If digits are more than 8
-    if (resDigits > 8 || totalDigits > 8) {
+    if (resDigits > 8 || totalValDigits > 8) {
         tipAmount.style.fontSize = '1rem';
         total.style.fontSize = '1rem';
     }
