@@ -129,7 +129,8 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: 1rem;
-    &:focus {
+    &:focus,
+    &:hover {
         cursor: pointer;
         outline: 3px solid $strong-cyan;
     }
@@ -217,7 +218,9 @@ input::-webkit-inner-spin-button {
             text-align: center;
             color: $very-dark-cyan;
         }
-        &:focus {
+        &:focus,
+        &:hover {
+            cursor: pointer;
             outline: 3px solid $strong-cyan;
             text-align: right;
         }
