@@ -1,4 +1,4 @@
-# Tip calculator app 
+# Tip calculator app
 
 ## Table of contents
 
@@ -22,12 +22,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./assets/design/desktop-preview.jpg)
+![](./assets/design/active-states.jpg)
 
 ### Links
 
 - Solution URL: [Solution URL here](https://github.com/iprinceroyy/tip-calculator-app/)
-- Live Site URL: [Live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Site URL here](https://tip-calculator-prince.netlify.app/)
 
 ## My process
 
@@ -42,4 +42,4 @@ Users should be able to:
 ## Author
 
 - Frontend Mentor - [@iprinceroyy](https://www.frontendmentor.io/profile/iprinceroyy)
-- Twitter - [@prince_popups](https://www.twitter.com/prince_popups)
+- Twitter - [@prince_popups](https://www.twitter.com/@prince_popups)
