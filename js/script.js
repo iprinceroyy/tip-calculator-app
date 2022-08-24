@@ -27,6 +27,15 @@ const calcTip = () => {
     const res = ((tipVal / 100) * billVal) / people;
     const totalVal = billVal / people + res;
 
+    const resDigits = Math.floor(Math.log(res) / Math.log(10));
+    const totalDigits = Math.floor(Math.log(totalVal) / Math.log(10));
+
+    // If digits are more than 8
+    if (resDigits > 8 || totalDigits > 8) {
+        tipAmount.style.fontSize = '1rem';
+        total.style.fontSize = '1rem';
+    }
+
     // Change tipAmt & total elements
     // to the above result
     tipAmount.textContent = +res.toFixed(2);
