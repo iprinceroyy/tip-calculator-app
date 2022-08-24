@@ -45,7 +45,7 @@ $fw-700: 700;
     gap: 5.3rem;
     align-items: center;
     justify-content: center;
-    margin-block-start: 3rem;
+    margin-block-start: 3.125rem;
     @media(min-width: 45rem) {
         padding: 4rem;
     }
@@ -265,7 +265,7 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
-    padding-block: 2.2rem clamp(1.5rem, -0.8681rem + 5.26vw, 2.5rem);
+    padding-block: 2.5rem clamp(1.5rem, -0.8681rem + 5.26vw, 2.5rem);
     padding-inline: clamp(1.5rem, -0.8681rem + 5.26vw, 2.5rem);
     background-color: $very-dark-cyan;
 }
