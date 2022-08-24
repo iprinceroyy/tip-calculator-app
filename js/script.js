@@ -38,8 +38,8 @@ const calcTip = () => {
 
     // Change tipAmt & total elements
     // to the above result
-    tipAmount.textContent = `${+res.toFixed(2)}`;
-    total.textContent = `${+totalVal.toFixed(2)}`;
+    tipAmount.textContent = `$${+res.toFixed(2)}`;
+    total.textContent = `$${+totalVal.toFixed(2)}`;
 };
 
 const showError = element => {
